@@ -82,8 +82,8 @@ class SportsWalking(Training):
     def get_spent_calories(self):
         mean_speed = self.get_mean_speed() * self.C_MH_IN_HOUR
         calories = ((self.COEF_1 * self.weight + (mean_speed ** 2
-                    / (self.height / self.METTERS_IN_SM))
-                    * self.COEF_2 * self.weight)
+                     / (self.height / self.METTERS_IN_SM))
+                     * self.COEF_2 * self.weight)
                     * self.duration * self.MIN_IN_HOUR)
         return calories
 
@@ -139,4 +139,3 @@ if __name__ == '__main__':
     for workout_type, data in packages:
         training = read_package(workout_type, data)
         main(training)
-
